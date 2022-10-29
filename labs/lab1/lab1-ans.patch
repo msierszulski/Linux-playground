@@ -1,0 +1,29 @@
+diff --git a/arch/arm/config.mk b/arch/arm/config.mk
+index f25603109e..a5e64c3312 100644
+--- a/arch/arm/config.mk
++++ b/arch/arm/config.mk
+@@ -5,9 +5,9 @@
+ 
+ ifndef CONFIG_STANDALONE_LOAD_ADDR
+ ifneq ($(CONFIG_ARCH_OMAP2PLUS),)
+-CONFIG_STANDALONE_LOAD_ADDR = 0x80300000
++CONFIG_STANDALONE_LOAD_ADDR = 0x60008000
+ else
+-CONFIG_STANDALONE_LOAD_ADDR = 0xc100000
++CONFIG_STANDALONE_LOAD_ADDR = 0x60008000
+ endif
+ endif
+ 
+diff --git a/configs/vexpress_ca9x4_defconfig b/configs/vexpress_ca9x4_defconfig
+index 9390cf61d1..bc6bf4a639 100644
+--- a/configs/vexpress_ca9x4_defconfig
++++ b/configs/vexpress_ca9x4_defconfig
+@@ -3,7 +3,7 @@ CONFIG_TARGET_VEXPRESS_CA9X4=y
+ CONFIG_SYS_TEXT_BASE=0x60800000
+ CONFIG_DISTRO_DEFAULTS=y
+ CONFIG_NR_DRAM_BANKS=2
+-CONFIG_BOOTCOMMAND="run distro_bootcmd; run bootflash"
++CONFIG_BOOTCOMMAND="run distro_bootcmd; tftpboot 0x60008000 hello_world.bin; go 0x60008000"
+ # CONFIG_DISPLAY_CPUINFO is not set
+ # CONFIG_DISPLAY_BOARDINFO is not set
+ # CONFIG_CMD_CONSOLE is not set
