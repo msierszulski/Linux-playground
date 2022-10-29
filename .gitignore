@@ -1,2 +1,6 @@
 u-boot/
 linux/
+busybox*
+rootfs/
+uRamdisk
+initramfs.cpio.gz
