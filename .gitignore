@@ -4,3 +4,4 @@ busybox*
 rootfs/
 uRamdisk
 initramfs.cpio.gz
+buildroot
