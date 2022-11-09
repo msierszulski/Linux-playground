@@ -5,3 +5,4 @@ rootfs/
 uRamdisk
 initramfs.cpio.gz
 buildroot
+poky
